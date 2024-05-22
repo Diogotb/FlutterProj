@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878749900384",
+    "project_id": "pristine-disk-377217",
+    "storage_bucket": "pristine-disk-377217.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878749900384:android:c2a7471c1ab39f9abeed05",
+        "android_client_info": {
+          "package_name": "com.diogotb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ4FP4p8fGOFLDQ-UmifwhBOIbN73zKgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
