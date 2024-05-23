@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_api_geo/View/search_screen.dart';
 
 import 'View/home_screen.dart';
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const HomeScreen(),
+      routes: {
+        '/search' : (context) => const SearchScreen()
+      },
     );
   }
 }
