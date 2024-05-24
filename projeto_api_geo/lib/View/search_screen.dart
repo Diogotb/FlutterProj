@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_api_geo/Controller/city_db_controller.dart';
 import 'package:projeto_api_geo/Service/city_db_service.dart';
 
 import '../Controller/weather_controller.dart';
@@ -16,7 +17,7 @@ class _SearchScreenState extends State<SearchScreen> {
   final WeatherController _controller = WeatherController();
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _cityController = TextEditingController();
-  final CityDataBaseService _dbService = CityDataBaseService();
+  final CityDBController _dbController = CityDBController();
 
   @override
   void initState() {
@@ -58,30 +59,6 @@ class _SearchScreenState extends State<SearchScreen> {
                         child: const Text("Pesquisar"),
                       ),
                     ]))),
-            Expanded(
-              child: FutureBuilder(
-                  future: _dbService.getAllCities(),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      return ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        itemBuilder: (context, index) {
-                          final city = snapshot.data![index];
-                          return ListTile(
-                            title: Text(city.cityName),
-                            onTap: () {
-                              _findCity(city.cityName);
-                            },
-                          );
-                        },
-                      );
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                  }),
-            )
           ],
         ),
       ),
@@ -91,8 +68,8 @@ class _SearchScreenState extends State<SearchScreen> {
   Future<void> _findCity(String city) async {
     if (await _controller.findCity(city)) {
       //snackbar
-      City cidade = City(cityName: city, favoriteCities: false);
-      _dbService.insertCity(cidade);
+      City cidade = City(cityName: city, favoriteCities: 0);
+      _dbController.insertCity(cidade);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Cidade encontrada!"),

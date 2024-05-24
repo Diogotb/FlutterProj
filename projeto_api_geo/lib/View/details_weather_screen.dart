@@ -23,7 +23,7 @@ class _DetailsWeatherScreenState extends State<DetailsWeatherScreen> {
             padding: const EdgeInsets.all(20),
             child: Center(
                 child: FutureBuilder(
-                    future: _controller.getWeather(widget.city),
+                    future: _controller.getWeatherbyCity(widget.city),
                     builder: (context, snapshot) {
                       if (_controller.weatherList.isEmpty) {
                         return const Column(

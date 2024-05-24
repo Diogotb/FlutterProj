@@ -10,7 +10,7 @@ class CityDataBaseService {
       """CREATE TABLE cities(
         id SERIAL, 
         cityname TEXT, 
-        favoritecities BOOLEAN DEFAULT false)""";
+        favoritecities INTEGER)""";
 
   Future<Database> _getDatabase() async{
     return openDatabase(
@@ -23,25 +23,20 @@ class CityDataBaseService {
     );
   }
   //list all cities
-  Future<List<City>> getAllCities() async {
+  Future<List<Map<String,dynamic>>> getAllCities() async {
     Database db = await _getDatabase();
-    List<Map<String, dynamic>> maps = await db.query(TABLE_NOME);
-    return  List.generate(
-        maps.length,
-        (i) {
-          return City.fromMap(maps[i]);
-        },
-      );
+     return await db.query(TABLE_NOME); 
+
   }
   //insert a new city
-  Future<int> insertCity(City city) async {
+  Future<void> insertCity(City city) async {
     Database db = await _getDatabase();
-    return await db.insert(TABLE_NOME, city.toMap());
+    await db.insert(TABLE_NOME, city.toMap());
   }
   
   //update favoriteCities
-  Future<int> updateCity(City city) async {
+  Future<void> updateCity(City city) async {
     Database db = await _getDatabase();
-    return await db.update(TABLE_NOME, city.toMap(), where: 'cityname =?', whereArgs: [city.cityName]);
+    await db.update(TABLE_NOME, city.toMap(), where: 'cityname =?', whereArgs: [city.cityName]);
   }
 }

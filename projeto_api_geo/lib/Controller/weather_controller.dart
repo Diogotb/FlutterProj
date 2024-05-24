@@ -11,7 +11,7 @@ class WeatherController {
   List<Weather> get weatherList => _weatherList;
 
   //métodos
-  Future<void> getWeather(String city) async {
+  Future<void> getWeatherbyCity(String city) async {
     try{
       Weather weather = Weather.fromJson(await _service.getWeatherbyCity(city));
       weatherList.add(weather);
@@ -32,7 +32,7 @@ class WeatherController {
   }
   Future<bool> findCity(String city) async{
     try{
-      Weather weather = Weather.fromJson(await _service.getWeather(city));
+      Weather weather = Weather.fromJson(await _service.getWeatherbyCity(city));
       weatherList.add(weather);
       return true;
     }catch(e){
