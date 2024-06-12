@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850453789097",
+    "project_id": "teste-firebase-6fca5",
+    "storage_bucket": "teste-firebase-6fca5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850453789097:android:b215c029cab421bea0ecb8",
+        "android_client_info": {
+          "package_name": "br.com.diogotb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_-U2vpEydZIrNuyL3pBmV65ZLWkCMNQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
