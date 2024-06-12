@@ -1,1 +1,25 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"pristine-disk-377217","appId":"1:878749900384:android:c2a7471c1ab39f9abeed05","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"pristine-disk-377217","configurations":{"android":"1:878749900384:android:c2a7471c1ab39f9abeed05","ios":"1:878749900384:ios:a3d6ee3122a11df3beed05","macos":"1:878749900384:ios:a3d6ee3122a11df3beed05","web":"1:878749900384:web:d4df4c6374cbaadabeed05","windows":"1:878749900384:web:d0a2b2b24f495097beed05"}}}}}}
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "pristine-disk-377217",
+                    "appId": "1:878749900384:android:c2a7471c1ab39f9abeed05",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "pristine-disk-377217",
+                    "configurations": {
+                        "android": "1:878749900384:android:c2a7471c1ab39f9abeed05",
+                        "ios": "1:878749900384:ios:a3d6ee3122a11df3beed05",
+                        "macos": "1:878749900384:ios:a3d6ee3122a11df3beed05",
+                        "web": "1:878749900384:web:d4df4c6374cbaadabeed05",
+                        "windows": "1:878749900384:web:d0a2b2b24f495097beed05"
+                    }
+                }
+            }
+        }
+    }
+}
