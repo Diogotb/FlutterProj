@@ -1,6 +1,8 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/todolist.dart';
+
 
 class TodolistController{
   //atributo list
@@ -21,12 +23,22 @@ class TodolistController{
   }
   //fetch list
   Future<void> fetchList(String userId) async{
-    final result = await _firestore.collection(
-      'todolist')
-      .where(
-        'userId',
-         isEqualTo: userId)
-         .get();
-    _list = result.docs.map((doc) => Todolist.fromMap(doc.data(), doc.id)).toList();    
+    print(userId);
+    QuerySnapshot result = await _firestore.collection('todolist').where('userid', isEqualTo: userId).get();
+    print(result.size);
+    List<dynamic> teste = result.docs as List;
+    print(teste.length);
+    for(int i = 0; i < teste.length; i++){
+      print(teste[i].data());
+    }
   }
 }
+
+
+
+
+
+// final moviesRef = FirebaseFirestore.instance.collection('movies').withConverter<Movie>(
+//       fromFirestore: (snapshot, _) => Movie.fromJson(snapshot.data()!),
+//       toFirestore: (movie, _) => movie.toJson(),
+//     );
